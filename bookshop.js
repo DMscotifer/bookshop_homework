@@ -3,3 +3,5 @@ const Bookshop = function(name) {
   this.till = 0;
   this.stock = [];
 }
+
+module.exports = Bookshop;
