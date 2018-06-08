@@ -4,4 +4,12 @@ const Bookshop = function(name) {
   this.stock = [];
 }
 
+Bookshop.prototype.addToTill = function(value) {
+  this.till += value;
+}
+
+Bookshop.prototype.removeFromTill = function(value) {
+  this.till -= value;
+}
+
 module.exports = Bookshop;

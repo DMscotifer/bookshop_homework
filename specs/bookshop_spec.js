@@ -23,5 +23,15 @@ it("should have a name", function() {
   assert.strictEqual(bookshop1.name, "Book'em")
 });
 
+it("should have a till that starts at 0", function(){
+  assert.strictEqual(bookshop1.till, 0);
+})
+
+it("should be able to increase and decrease the value of the till", function() {
+  bookshop1.addToTill(100);
+  assert.strictEqual(bookshop1.till, 100)
+  bookshop1.removeFromTill(90);
+  assert.strictEqual(bookshop1.till, 10)
+})
 
 })
