@@ -20,5 +20,9 @@ Customer.prototype.valueOfCollection = function() {
   return this.collection.reduce( (sum, book) => { return sum += book.price },0)
 }
 
+Customer.prototype.valueOfCollectionByGenre = function(genre) {
+  return this.collection.reduce( (sum, book) => { if(book.genre === genre) {return sum += book.price}},0)
+}
+
 
 module.exports = Customer

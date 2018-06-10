@@ -54,11 +54,12 @@ it("should be able to view the total value of their collection", function() {
   assert.strictEqual(customer1.valueOfCollection(), 10.00);
   customer1.collection.push(book3);
   assert.strictEqual(customer1.valueOfCollection(), 40.00);
-
 });
 
-xit("should be able to view the total value of all books of a given Genre", function() {
-  assert.strictEqual();
+it("should be able to view the total value of all books of a given Genre", function() {
+  customer1.collection.push(book1);
+  customer1.collection.push(book3);
+  assert.strictEqual(customer1.valueOfCollectionByGenre("Fantasy", 10.00));
 });
 
 xit("should be able to view their most valuable books", function() {
