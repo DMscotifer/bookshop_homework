@@ -6,4 +6,4 @@ const Book = function(title, author, genre, fictional, price) {
   this.price = price;
 }
 
-module.exports = Book;
+module.exports = Book

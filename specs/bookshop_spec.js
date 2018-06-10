@@ -12,15 +12,18 @@ describe("Bookshop", function() {
   var book4;
 
   beforeEach(function() {
-    bookshop1 = new Bookshop("Book'em");
+    bookshop1 = new Bookshop("Bookmarks", "Glasgow");
     book1 = new Book("The Silmarilion", "J.R.R Tolkien", "Fantasy", true, 10.00);
     book2 = new Book("Crime and Punishment", "Fydor Dostoyevsky", "Drama", true, 8.00);
     book3 = new Book("The Decline and Fall of the Roman Empire", "Edward Gibbon", "History", false, 30.00);
     book4 = new Book("Capital in the 21st Century", "Thomas Pikkety", "Economics", false, 25.00);
+    bookshop1.stock.push(book1);
+    bookshop1.stock.push(book2);
+    bookshop1.stock.push(book3);
   })
 
 it("should have a name", function() {
-  assert.strictEqual(bookshop1.name, "Book'em")
+  assert.strictEqual(bookshop1.name, "Bookmarks")
 });
 
 it("should have a till that starts at 0", function(){
@@ -32,6 +35,15 @@ it("should be able to increase and decrease the value of the till", function() {
   assert.strictEqual(bookshop1.till, 100)
   bookshop1.removeFromTill(90);
   assert.strictEqual(bookshop1.till, 10)
+})
+
+it("should be able to add books to stock", function() {
+  bookshop1.stock.push(book4);
+  assert.strictEqual(bookshop1.stock[3], book4);
+})
+
+it("should be able to display information about the shop", function() {
+  assert.strictEqual(bookshop1.information(), "Bookmarks of Glasgow");
 })
 
 })
