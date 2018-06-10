@@ -16,4 +16,9 @@ Customer.prototype.sell = function(book) {
   this.collection.splice(book.indexOf, 1);
 };
 
+Customer.prototype.valueOfCollection = function() {
+  return this.collection.reduce( (sum, book) => { return sum += book.price },0)
+}
+
+
 module.exports = Customer

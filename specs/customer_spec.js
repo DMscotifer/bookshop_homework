@@ -48,8 +48,13 @@ it("shouldn't be able to buy a book if he can't afford it.", function() {
   assert.strictEqual(customer1.collection.length, 0);
 });
 
-xit("should be able to view the total value of their collection", function() {
-  assert.strictEqual();
+it("should be able to view the total value of their collection", function() {
+  assert.strictEqual(customer1.valueOfCollection(), 0);
+  customer1.collection.push(book1);
+  assert.strictEqual(customer1.valueOfCollection(), 10.00);
+  customer1.collection.push(book3);
+  assert.strictEqual(customer1.valueOfCollection(), 40.00);
+
 });
 
 xit("should be able to view the total value of all books of a given Genre", function() {
