@@ -26,15 +26,15 @@ it("should have a name", function() {
   assert.strictEqual(bookshop1.name, "Bookmarks")
 });
 
-it("should have a till that starts at 0", function(){
-  assert.strictEqual(bookshop1.till, 0);
+it("should have a balance that starts at 0", function(){
+  assert.strictEqual(bookshop1.balance, 0);
 })
 
-it("should be able to increase and decrease the value of the till", function() {
-  bookshop1.addToTill(100);
-  assert.strictEqual(bookshop1.till, 100)
-  bookshop1.removeFromTill(90);
-  assert.strictEqual(bookshop1.till, 10)
+it("should be able to increase and decrease the shop's balance", function() {
+  bookshop1.addToBalance(100);
+  assert.strictEqual(bookshop1.balance, 100)
+  bookshop1.removeFromBalance(90);
+  assert.strictEqual(bookshop1.balance, 10)
 })
 
 it("should be able to add books to stock", function() {
@@ -44,6 +44,22 @@ it("should be able to add books to stock", function() {
 
 it("should be able to display information about the shop", function() {
   assert.strictEqual(bookshop1.information(), "Bookmarks of Glasgow");
+})
+
+xit("should be able to list all inventory", function() {
+
+})
+
+xit("can sell a book and adjust the Store's balance to account for the book being sold", function() {
+
+})
+
+xit("can report the finnancial situation of the Store. Balance and value of inventory", function() {
+
+})
+
+xit("should be able to view all books of a given Genre", function() {
+
 })
 
 })
