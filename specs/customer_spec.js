@@ -28,11 +28,16 @@ describe("Customer", function() {
 
 
 it("can buy and sell books.", function() {
+  customer1.budget = 30;
   customer1.buy(book3);
   assert.strictEqual(customer1.collection.length, 1);
+  customer1.sell(book3);
+  assert.strictEqual(customer1.collection.length, 0);
+  assert.strictEqual(customer1.budget, 30);
 });
 
 xit("should have cash that increase and decreases with buying and selling.", function() {
+
   assert.strictEqual();
 });
 

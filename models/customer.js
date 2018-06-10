@@ -9,4 +9,9 @@ Customer.prototype.buy = function(book) {
   this.collection.push(book);
 }
 
+Customer.prototype.sell = function(book) {
+  this.budget += book.price;
+  this.collection.splice(book.indexOf, 1);
+}
+
 module.exports = Customer
