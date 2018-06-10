@@ -11,6 +11,7 @@ describe("Customer", function() {
   var book2;
   var book3;
   var book4;
+  var customer1;
 
 
   beforeEach(function() {
@@ -22,11 +23,13 @@ describe("Customer", function() {
     bookshop1.stock.push(book1);
     bookshop1.stock.push(book2);
     bookshop1.stock.push(book3);
+    customer1 = new Customer("Satya");
   })
 
 
-xit("can buy and sell books.", function() {
-  assert.strictEqual();
+it("can buy and sell books.", function() {
+  customer1.buy(book3);
+  assert.strictEqual(customer1.collection.length, 1);
 });
 
 xit("should have cash that increase and decreases with buying and selling.", function() {
