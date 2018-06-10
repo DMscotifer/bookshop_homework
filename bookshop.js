@@ -42,4 +42,8 @@ Bookshop.prototype.financialOverview = function() {
   return this.name + " currently has £" + this.valueOfStock() + " worth of stock and a balance of £" + this.balance;
 }
 
+Bookshop.prototype.byGenre = function(genre) {
+  return this.stock.filter( book => book.genre === genre )
+}
+
 module.exports = Bookshop;

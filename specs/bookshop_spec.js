@@ -60,8 +60,8 @@ it("can report the finnancial situation of the Store. Balance and value of inven
   assert.strictEqual(bookshop1.financialOverview(), "Bookmarks currently has £48 worth of stock and a balance of £0");
 })
 
-xit("should be able to view all books of a given Genre", function() {
-
+it("should be able to view all books of a given Genre", function() {
+  assert.strictEqual(bookshop1.byGenre("Fantasy").length, 1);
 })
 
 })
