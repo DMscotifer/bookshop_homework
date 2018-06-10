@@ -33,16 +33,19 @@ it("can buy and sell books.", function() {
   assert.strictEqual(customer1.collection.length, 1);
   customer1.sell(book3);
   assert.strictEqual(customer1.collection.length, 0);
+});
+
+it("should have cash that increase and decreases with buying and selling.", function() {
+  customer1.budget = 30;
+  customer1.buy(book3);
+  assert.strictEqual(customer1.budget, 0);
+  customer1.sell(book3);
   assert.strictEqual(customer1.budget, 30);
 });
 
-xit("should have cash that increase and decreases with buying and selling.", function() {
-
-  assert.strictEqual();
-});
-
-xit("shouldn't be able to buy a book if he can't afford it.", function() {
-  assert.strictEqual();
+it("shouldn't be able to buy a book if he can't afford it.", function() {
+  customer1.buy(book3);
+  assert.strictEqual(customer1.collection.length, 0);
 });
 
 xit("should be able to view the total value of their collection", function() {
