@@ -25,4 +25,13 @@ Bookshop.prototype.allStock = function() {
   return result;
 }
 
+Bookshop.prototype.sell = function(book) {
+  this.balance += book.price;
+  this.removeFromStock(book);
+}
+
+Bookshop.prototype.removeFromStock = function(book) {
+  this.stock.splice(book.indexOf, 1);
+}
+
 module.exports = Bookshop;
