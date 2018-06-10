@@ -6,4 +6,8 @@ const Book = function(title, author, genre, fictional, price) {
   this.price = price;
 }
 
+Book.prototype.details = function() {
+  return(book.title + " by " + book.author + "\n");
+}
+
 module.exports = Book

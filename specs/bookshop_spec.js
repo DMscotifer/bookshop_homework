@@ -14,7 +14,7 @@ describe("Bookshop", function() {
   beforeEach(function() {
     bookshop1 = new Bookshop("Bookmarks", "Glasgow");
     book1 = new Book("The Silmarilion", "J.R.R Tolkien", "Fantasy", true, 10.00);
-    book2 = new Book("Crime and Punishment", "Fydor Dostoyevsky", "Drama", true, 8.00);
+    book2 = new Book("Crime and Punishment", "Fyodor Dostoyevsky", "Drama", true, 8.00);
     book3 = new Book("The Decline and Fall of the Roman Empire", "Edward Gibbon", "History", false, 30.00);
     book4 = new Book("Capital in the 21st Century", "Thomas Pikkety", "Economics", false, 25.00);
     bookshop1.stock.push(book1);
@@ -46,8 +46,8 @@ it("should be able to display information about the shop", function() {
   assert.strictEqual(bookshop1.information(), "Bookmarks of Glasgow");
 })
 
-xit("should be able to list all inventory", function() {
-
+it("should be able to list all inventory", function() {
+   assert.strictEqual(bookshop1.allStock().length, 3);
 })
 
 xit("can sell a book and adjust the Store's balance to account for the book being sold", function() {

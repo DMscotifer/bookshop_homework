@@ -17,4 +17,12 @@ Bookshop.prototype.information = function() {
   return this.name + " of " + this.city;
 }
 
+Bookshop.prototype.allStock = function() {
+  result = [];
+  this.stock.forEach(function(book) {
+    result.push(book.details);
+  });
+  return result;
+}
+
 module.exports = Bookshop;
