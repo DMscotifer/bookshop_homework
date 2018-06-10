@@ -1,6 +1,6 @@
 var assert = require('assert');
-var Book = require('../book.js');
-var Bookshop = require('../bookshop.js');
+var Book = require('../models/book.js');
+var Bookshop = require('../models/bookshop.js');
 
 
 describe("Bookshop", function() {
