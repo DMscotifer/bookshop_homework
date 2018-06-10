@@ -24,5 +24,12 @@ Customer.prototype.valueOfCollectionByGenre = function(genre) {
   return this.collection.reduce( (sum, book) => { if(book.genre === genre) {return sum += book.price}},0)
 }
 
+Customer.prototype.mostValueableBook = function() {
+  this.collection.sort(function(a, b) {
+    return b.price - a.price;
+  })
+  return this.collection[0];
+}
+
 
 module.exports = Customer

@@ -62,8 +62,11 @@ it("should be able to view the total value of all books of a given Genre", funct
   assert.strictEqual(customer1.valueOfCollectionByGenre("Fantasy", 10.00));
 });
 
-xit("should be able to view their most valuable books", function() {
-  assert.strictEqual();
+it("should be able to view their most valuable books", function() {
+  customer1.collection.push(book1);
+  customer1.collection.push(book2);
+  customer1.collection.push(book3);
+  assert.strictEqual(customer1.mostValueableBook(), book3);
 });
 
 xit("should be able to sort their books by value. (ascending or descending)", function() {
