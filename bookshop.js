@@ -34,4 +34,12 @@ Bookshop.prototype.removeFromStock = function(book) {
   this.stock.splice(book.indexOf, 1);
 }
 
+Bookshop.prototype.valueOfStock = function() {
+  return this.stock.reduce( (sum, book) => { return sum += book.price }, this.balance )
+}
+
+Bookshop.prototype.financialOverview = function() {
+  return this.name + " currently has £" + this.valueOfStock() + " worth of stock and a balance of £" + this.balance;
+}
+
 module.exports = Bookshop;

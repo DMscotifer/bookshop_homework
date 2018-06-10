@@ -56,8 +56,8 @@ it("can sell a book and adjust the Store's balance to account for the book being
   assert.strictEqual(bookshop1.stock.length, 2);
 })
 
-xit("can report the finnancial situation of the Store. Balance and value of inventory", function() {
-
+it("can report the finnancial situation of the Store. Balance and value of inventory", function() {
+  assert.strictEqual(bookshop1.financialOverview(), "Bookmarks currently has £48 worth of stock and a balance of £0");
 })
 
 xit("should be able to view all books of a given Genre", function() {
