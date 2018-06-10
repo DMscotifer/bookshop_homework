@@ -69,8 +69,11 @@ it("should be able to view their most valuable books", function() {
   assert.strictEqual(customer1.mostValueableBook(), book3);
 });
 
-xit("should be able to sort their books by value. (ascending or descending)", function() {
-  assert.strictEqual();
+it("should be able to sort their books by value. (ascending or descending)", function() {
+  customer1.collection.push(book3);
+  customer1.collection.push(book1);
+  customer1.sortByPrice();
+  assert.strictEqual(customer1.collection[0], book1);
 });
 
 xit("should be able to compare the value of their collection with another books collector", function() {

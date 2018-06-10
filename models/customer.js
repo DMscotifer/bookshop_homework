@@ -27,8 +27,14 @@ Customer.prototype.valueOfCollectionByGenre = function(genre) {
 Customer.prototype.mostValueableBook = function() {
   this.collection.sort(function(a, b) {
     return b.price - a.price;
-  })
+  });
   return this.collection[0];
+}
+
+Customer.prototype.sortByPrice = function(sort) {
+  this.collection.sort(function(book, bookToCompare){
+  return book.price - bookToCompare.price;
+});
 }
 
 
