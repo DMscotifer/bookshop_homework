@@ -37,5 +37,10 @@ Customer.prototype.sortByPrice = function(sort) {
 });
 }
 
+Customer.prototype.compareWith = function(customerToCompare){
+  return this.name + " has a collection worth £" + this.valueOfCollection() + ". " + customerToCompare.name + " has a collection worth £" + customerToCompare.valueOfCollection() + ".";
+  ;
+}
+
 
 module.exports = Customer

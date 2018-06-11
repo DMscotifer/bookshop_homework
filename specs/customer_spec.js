@@ -12,6 +12,7 @@ describe("Customer", function() {
   var book3;
   var book4;
   var customer1;
+  var customer2;
 
 
   beforeEach(function() {
@@ -24,6 +25,7 @@ describe("Customer", function() {
     bookshop1.stock.push(book2);
     bookshop1.stock.push(book3);
     customer1 = new Customer("Satya");
+    customer2 = new Customer("Bill");
   })
 
 
@@ -76,8 +78,10 @@ it("should be able to sort their books by value. (ascending or descending)", fun
   assert.strictEqual(customer1.collection[0], book1);
 });
 
-xit("should be able to compare the value of their collection with another books collector", function() {
-  assert.strictEqual();
+it("should be able to compare the value of their collection with another books collector", function() {
+  customer1.collection.push(book1);
+  customer2.collection.push(book3);
+  assert.strictEqual(customer1.compareWith(customer2), "Satya has a collection worth £10. Bill has a collection worth £30.");
 });
 
 });
